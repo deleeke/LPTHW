@@ -1,0 +1,5 @@
+one
+two
+threee!
+Oh wow I just echoed another line to this file
+new stuff into this filepython2.7 ex17.py ex16_sample.txt ex15_sample.txt
