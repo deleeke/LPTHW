@@ -1,5 +1,6 @@
-class Scanner(object):
-
+class Lexicon(object):
+    """Searches user input for words in lexicon and returns
+    a tuple that classifies each known word with a type"""
     def __init__(self, directions,
                  verbs, stops, nouns):
         self.directions = directions.split()
@@ -13,27 +14,28 @@ class Scanner(object):
         wordListname = ['direction', 'verb',
                         'stop', 'noun']
         for i in range(0, len(wordList)):
-            if word in wordList[i]:
-                print word, 'is in', wordListname[i]
-                return (wordListname[i], word)
+            if word.lower() in wordList[i]:
+                # checks each word list
+                # if it is in the list, it returns a tuple
+                # with the typename and the word
+                return (wordListname[i], word.lower())
 
-        print 'check to see if word is actually a number'
+        # Now that it has checked all words in the lexicon,
+        # check to see if word is actually a number
         return self.is_int(word)
 
     def is_int(self, s):
         try:
             int(s)
-            return ('number', s)
+            return ('number', int(s))
 
         except ValueError:
+            # if it is not a number
             return ('error', s)
 
     def scan(self, usrinput):
-        usrinput = usrinput.lower().split()
-        for word in usrinput:
-            print self.findWord(word)
-
-lexicon = Scanner('north south east west',
-                  'go kill eat',
-                  'the in of then',
-                  'bear princess witch mage warrior')
+        splitInput = usrinput.split()
+        returnList = []
+        for word in splitInput:
+             returnList.append(self.findWord(word))
+        return returnList
