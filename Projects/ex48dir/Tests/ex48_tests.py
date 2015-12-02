@@ -26,11 +26,11 @@ def test_stops():
                           ('stop', 'in'),
                           ('stop', 'of')])
 
-# def test_nouns():
-#     assert_equal(lexicon.scan(("bear"), [('noun', 'bear')])
-#     result = lexicon.scan("BEAR princEss")
-#     assert_equal(result, [('noun', 'bear'),
-#                           ('noun', 'princess')])
+def test_nouns():
+    assert_equal(lexicon.scan("bear"), [('noun', 'bear')])
+    result = lexicon.scan("bEAr princess")
+    assert_equal(result, [('noun', 'bear'),
+                          ('noun', 'princess')])
 
 def test_numbers():
     assert_equal(lexicon.scan('1234'), [('number', 1234)])
