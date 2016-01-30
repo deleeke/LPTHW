@@ -9,4 +9,12 @@ install:
   - "sudo pip install nose"
 # command to run tests
 before_script: cd Projects/ex49
-script: nosetests
+script: 
+script: 
+  - "nosetests"
+  - "cd .."
+  - "cd ex48"
+  - "nosetests"
+  - "cd .."
+  - "cd ex47dir"
+  - "nosetests"  
