@@ -8,5 +8,5 @@ before_install:
 install: 
   - "sudo pip install nose"
 # command to run tests
-before_script: cd ~/LPTHW/Projects/ex49
+before_script: cd Projects/ex49
 script: nosetests
