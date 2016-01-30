@@ -4,9 +4,9 @@ python:
   - "2.7"
 before_install:
   - "sudo apt-get update -qq"
-  - "sudo apt-get upgrade -qq"
 # command to install dependencies
 install: 
   - "sudo pip install nose"
 # command to run tests
+before_script: cd ~/LPTHW/Projects/ex49
 script: nosetests
