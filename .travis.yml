@@ -1,0 +1,11 @@
+osx:
+ - linux
+ - osx
+language: python
+ - 2.7
+ - 2.6
+before_script:
+ - sudo apt-get install python-nose -qq
+
+script:
+ - nosetests
